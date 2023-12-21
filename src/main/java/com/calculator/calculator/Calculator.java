@@ -26,6 +26,7 @@ public class Calculator implements CalculatorService  {
         }
         int diff = Integer.valueOf(num1) - Integer.valueOf(num2);
         return num1 + " - " + num2 + " = " + diff;
+
     }
     @Override
     public String calculatorMultiply(String num1, String num2) {
