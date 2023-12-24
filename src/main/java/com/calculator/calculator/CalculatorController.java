@@ -17,19 +17,34 @@ private final Calculator calculator;
     }
 
     @GetMapping(path = "/plus")
-    public String calculatorPlus(String num1, String num2) {
-        return calculator.calculatorPlus(num1, num2);
+    public String calculatorPlus(Intenger num1, Intenger num2) {
+        if (num1 == null || num2 == null) {
+            return "Ошибка! Вы не ввели одно или оба значения!";
+        }
+        return calculator.calculatorPlus(num1, num2);;
     }
     @GetMapping(path = "/minus")
-    public String calculatorMinus(String num1, String num2) {
+    public String calculatorMinus(Intenger num1, Intenger num2) {
+        if (num1 == null || num2 == null) {
+            return "Ошибка! Вы не ввели одно или оба значения!";
+        }
         return calculator.calculatorMinus(num1, num2);
     }
     @GetMapping(path = "/multiply")
-    public String calculatorMultiply(String num1, String num2) {
+    public String calculatorMultiply(Intenger num1, Intenger num2) {
+        if (num1 == null || num2 == null) {
+            return "Ошибка! Вы не ввели одно или оба значения!";
+        }
         return calculator.calculatorMultiply(num1, num2);
     }
     @GetMapping(path = "/divide")
-    public String calculatorDivide(String num1, String num2) {
+    public String calculatorDivide(Intenger num1, Intenger num2) {
+        if (num1 == null || num2 == null) {
+            return "Ошибка! Вы не ввели одно или оба значения!";
+        }
+        else if (Integer.valueOf(num2) == 0) {
+            return "Деление на ноль невозможно";
+        }
         return calculator.calculatorDivide(num1, num2);
     }
 }
